@@ -1,7 +1,7 @@
 package com.waes.techtalk.java.spring.migration.controller;
 
 import com.waes.techtalk.java.spring.migration.service.FooService;
-import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,7 +18,7 @@ public class FooController {
   }
 
   @GetMapping("/api/double/{number}")
-  public Integer getNumberDoubled(@PathVariable("number") @NotEmpty Integer number) {
+  public Integer getNumberDoubled(@PathVariable("number") @NotNull Integer number) {
     return service.returnGivenNumberDoubled(number);
   }
 
